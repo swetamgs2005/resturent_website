@@ -1,0 +1,197 @@
+ 
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+    
+        <link rel="stylesheet" href="{% static 'menu/style.css' %}">
+
+</head>
+
+{% block content %}
+
+    <nav style="background-color: rgb(164, 221, 225);">
+        <div class="logo">🍲 Mom's Tiffin Service</div>
+        <div class="nav-links">
+            <a class="nav-link" href="/#about">About</a>
+            <a class="nav-link" href="/#menu">Menu</a>
+            <a class="nav-link" href="/#pricing">Pricing</a>
+            <a class="nav-link"  href="/#contact" class="btn-order">Order Now</a>
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+
+        </div>
+        
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Taste of Home, Delivered to You</h1>
+        <p>Hygienic, homemade, and delicious tiffin service prepared with love by Mom.</p>
+        <a href="#contact" class="btn-order" style="font-size: 1.2rem;">Start Your Subscription</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <h2 class="section-title">Why Choose Mom's Kitchen?</h2>
+        <p style="max-width: 700px; margin: 0 auto;">
+            We understand that eating out is convenient, but it's never as healthy or tasty as home food. 
+            At Mom's Tiffin Service, we use fresh ingredients, traditional spices, and zero preservatives. 
+            Whether you are a student or a working professional, we bring the warmth of a home-cooked meal to your desk.
+        </p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <div style="text-align: center;">
+            <h2 class="section-title">Our Daily Menu</h2>
+        </div>
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-content">
+                    <h3>North Indian Thali</h3>
+                    <p>Roti, Aloo Sabzi, Dal, Rice, Salad, and Sweet.</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1589301760576-41f47eb42d53?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-content">
+                    <h3>South Indian Special</h3>
+                    <p>Idli, Vada, Sambar, Chutney, and Curd Rice.</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="menu-item">
+                <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="menu-content">
+                    <h3>Healthy Diet Box</h3>
+                    <p>Brown Rice, Steamed Veggies, Grilled Paneer, and Salad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+        <h2 class="section-title">Subscription Plans</h2>
+        <div class="pricing-cards">
+            <div class="card">
+                <h3>Weekly Plan</h3>
+                <div class="price">$50</div>
+                <p>5 Days (Mon-Fri)</p>
+                <p>1 Meal per day</p>
+                <p>Free Delivery</p>
+                <br>
+                <a href="#contact" class="btn-order" style="background: #333;">Select</a>
+            </div>
+            <div class="card featured">
+                <h3>Monthly Plan</h3>
+                <div class="price">$180</div>
+                <p>22 Days (Mon-Sat)</p>
+                <p>2 Meals per day</p>
+                <p>Free Delivery</p>
+                <p>Weekend Special</p>
+                <br>
+                <a href="#contact" class="btn-order">Select</a>
+            </div>
+            <div class="card">
+                <h3>Pay Per Meal</h3>
+                <div class="price">$5</div>
+                <p>Flexible</p>
+                <p>Any day</p>
+                <p>Standard Delivery</p>
+                <br>
+                <a href="#contact" class="btn-order" style="background: #333;">Select</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Order Form -->
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Place Your Order</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required placeholder="+1 234 567 890">
+            </div>
+            <div class="form-group">
+                <label for="plan">Select Plan</label>
+                <select id="plan">
+                    <option value="weekly">Weekly Plan</option>
+                    <option value="monthly">Monthly Plan</option>
+                    <option value="daily">Daily Tiffin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+                <textarea id="address" rows="3" required placeholder="Enter your full address..."></textarea>
+            </div>
+            <button type="submit">Confirm Order</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Mom's Tiffin Service. All rights reserved.</p>
+        <p>📞 Call us: +1 234 567 890 | 📧 Email: momskitchen@example.com</p>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page from reloading
+            
+            // Get values
+            const name = document.getElementById('name').value;
+            const plan = document.getElementById('plan').value;
+            
+            // Simple alert to simulate order
+            alert(`Thank you, ${name}! Your order for the ${plan} plan has been received. Mom will call you shortly.`);
+            
+            // Clear form
+            this.reset();
+        });
+    </script>
+
+
+   <!-- <header>
+        <h1>Tasty Restaurant</h1>
+    </header>
+
+    <nav>
+        
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/menu">Menu</a>
+                    <a class="nav-link" href="/reservation">Reservation</a>
+                    <a class="nav-link" href="/contact">Contact</a>
+            
+    </nav>
+
+    <section class="hero">
+        <h2>Welcome to Our Restaurant</h2>
+        <p>Fresh Food • Great Taste • Fast Service</p>
+            <a href="/menu" class="btn btn-primary btn-lg">View Menu</a>
+
+    </section>
+ 
+    <footer>
+        <p>© 2026 Tasty Restaurant</p>
+    </footer>-->
+    {% endblock %}
+
+</body>
+</html>
+<!--<div class="text-center">
+    <h1>Welcome to My Restaurant</h1>
+    <p  class="lead"> Delicious food, cozy atmosphere, and great service.</p>
+</div>-->
+

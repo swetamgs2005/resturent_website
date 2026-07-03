@@ -1,0 +1,88 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Hero section (Home page) */
+.text-center h1 {
+    font-size: 3rem;
+    color: #343a40;
+}
+
+.text-center p.lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+}
+
+/* Menu cards */
+.card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Reservation form */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form button {
+    width: 100%;
+    background-color: rgb(231, 104, 19);
+}
+
+/* Footer */
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+.text-center h1{
+    background-color: yellow;
+}
+.text-center p{font-size: medium;
+font-style: oblique;
+color: rgb(26, 5, 89);
+background-color: aliceblue;
+font: size 55px;}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+ :root {
+            --primary-color: #e67e22; /* Warm Orange */
+            --secondary-color: #d35400; /* Darker Orange */
+            --text-color: #333;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }*/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
