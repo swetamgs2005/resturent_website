@@ -1,1 +1,1 @@
-web: gunicorn resturent_website.wsgi
+web: gunicorn resturent_site.wsgi
